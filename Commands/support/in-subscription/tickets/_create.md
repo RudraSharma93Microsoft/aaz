@@ -24,3 +24,8 @@ Creates a new support ticket for Quota increase, Technical, Billing, and Subscri
     ```bash
         support in-subscription tickets create --contact-country "USA" --contact-email "abc@contoso.com" --contact-first-name "Foo" --contact-language "en-US" --contact-last-name "Bar" --contact-method "email" --contact-timezone "Pacific Standard Time" --contact-additional-emails "xyz@contoso.com" "devs@contoso.com"--description "TechnicalTicketDescription" --diagnostic-consent "Yes" --problem-classification "/providers/Microsoft.Support/services/TechnicalServiceNameGuid/problemClassifications/TechnicalProblemClassificationNameGuid" --severity "minimal" --ticket-name "TechnicalTestTicketName" --title "TechnicalTicketTitle" --technical-resource "/subscriptions/SubscriptionGuid/resourceGroups/RgName/providers/Microsoft.Compute/virtualMachines/RName" --secondary-consent "[{type:VirtualMachineMemoryDump,user-consent:No}]"
     ```
+
+- Create a ticket to request Quota increase for Compute VM Cores.
+    ```bash
+        az support in-subscription tickets create --contact-country "USA" --contact-email "abc@contoso.com" --contact-first-name "Foo" --contact-language "en-US" --contact-last-name "Bar" --contact-method "email" --contact-timezone "Pacific Standard Time" --description "QuotaTicketDescription" --diagnostic-consent "Yes" --problem-classification "/providers/Microsoft.Support/services/QuotaServiceNameGuid/problemClassifications/CoresQuotaProblemClassificationNameGuid" --severity "minimal" --ticket-name "QuotaTestTicketName" --title "QuotaTicketTitle"  --quota-change-version "1.0" --quota-change-requests [0].region="EASTUS" --quota-change-requests [0].payload="'{\`"VMFamily\`":\`"DSv3 Series\`",\`"NewLimit\`":\`"110\`"}'"
+    ```
