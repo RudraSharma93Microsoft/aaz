@@ -29,3 +29,8 @@ Creates a new support ticket for Quota increase, Technical, Billing, and Subscri
     ```bash
         support in-subscription tickets create --contact-country "USA" --contact-email "abc@contoso.com" --contact-first-name "Foo" --contact-language "en-US" --contact-last-name "Bar" --contact-method "email" --contact-timezone "Pacific Standard Time" --description "QuotaTicketDescription" --diagnostic-consent "Yes" --problem-classification "/providers/Microsoft.Support/services/QuotaServiceNameGuid/problemClassifications/CoresQuotaProblemClassificationNameGuid" --severity "minimal" --ticket-name "QuotaTestTicketName" --title "QuotaTicketTitle"  --quota-change-version "1.0" --quota-change-requests [0].region="EASTUS" --quota-change-requests [0].payload="'{\`"VMFamily\`":\`"DSv3 Series\`",\`"NewLimit\`":\`"110\`"}'"
     ```
+
+- Create a ticket for Generic Quota increase for any Azure Service.
+    ```bash
+        support in-subscription tickets create --contact-country "USA" --contact-email "abc@contoso.com" --contact-first-name "Foo" --contact-language "en-US" --contact-last-name "Bar" --contact-method "email" --contact-timezone "Pacific Standard Time" --description "QuotaTicketDescription" --diagnostic-consent "Yes" --problem-classification "/providers/Microsoft.Support/services/QuotaServiceNameGuid/problemClassifications/GenericProblemClassificationNameGuid" --severity "minimal" --ticket-name "QuotaTestTicketName" --title "QuotaTicketTitle"
+    ```
