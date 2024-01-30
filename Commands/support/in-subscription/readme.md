@@ -4,6 +4,9 @@ Manage Azure support resource within the selected subscription.
 
 ## Subgroups
 
+- [communication](/Commands/support/in-subscription/communication/readme.md)
+: Manage support ticket communications
+
 - [tickets](/Commands/support/in-subscription/tickets/readme.md)
 : Create and manage Azure support ticket with a subscription.
 
