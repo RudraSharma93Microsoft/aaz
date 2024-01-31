@@ -4,6 +4,9 @@ Manage Azure support resource without a subscription.
 
 ## Subgroups
 
+- [communication](/Commands/support/no-subscription/communication/readme.md)
+: Manage support ticket communications
+
 - [tickets](/Commands/support/no-subscription/tickets/readme.md)
 : Create and manage Azure support ticket without a subscription.
 
