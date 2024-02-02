@@ -4,6 +4,9 @@ Manage Azure support resource within the selected subscription.
 
 ## Subgroups
 
+- [chat-transcript](/Commands/support/in-subscription/chat-transcript/readme.md)
+: Manage support ticket chat transcript
+
 - [communication](/Commands/support/in-subscription/communication/readme.md)
 : Manage support ticket communications
 
