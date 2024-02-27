@@ -10,12 +10,6 @@ Manage Azure support resource within the selected subscription.
 - [communication](/Commands/support/in-subscription/communication/readme.md)
 : Manage support ticket communications
 
-- [file](/Commands/support/in-subscription/file/readme.md)
-: File operations for a specified subscription
-
-- [file-workspace](/Commands/support/in-subscription/file-workspace/readme.md)
-: File workspaces for Azure Support for the specified subscription.
-
 - [tickets](/Commands/support/in-subscription/tickets/readme.md)
 : Create and manage Azure support ticket with a subscription.
 
