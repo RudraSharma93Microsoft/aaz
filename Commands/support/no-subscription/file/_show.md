@@ -12,5 +12,5 @@ Get details of a specific file in a work space.
 
 - Show a file within a file-workspace
     ```bash
-        support no-subscription file-workspace file show --file-workspace-name "TestWorkspaceName" --file-name "FileName"
+        support no-subscription file show --file-workspace-name "TestWorkspaceName" --file-name "FileName"
     ```

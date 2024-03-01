@@ -12,10 +12,10 @@ List all the Files information under a workspace for an Azure subscription.
 
 - List all the files within a file-workspace for a specified subscription (different from the account subscription)
     ```bash
-        support in-subscription file-workspace file list --file-workspace-name "TestFileWorkspaceName" --subscription "TestSubscription"
+        support in-subscription file list --file-workspace-name "TestFileWorkspaceName" --subscription "TestSubscription"
     ```
 
 - List all the files within a file-workspace for a specified subscription (same as the account subscription)
     ```bash
-        support in-subscription file-workspace file list --file-workspace-name "TestFileWorkspaceName"
+        support in-subscription file list --file-workspace-name "TestFileWorkspaceName"
     ```

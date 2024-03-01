@@ -12,10 +12,10 @@ Get details of a specific file in a work space.
 
 - Show a file within a file-workspace for a specified subscription (different from the account subscription)
     ```bash
-        support in-subscription file-workspace file show --subscription "TestSubscription" --file-workspace-name "TestWorkspaceName" --file-name "FileName"
+        support in-subscription file show --subscription "TestSubscription" --file-workspace-name "TestWorkspaceName" --file-name "FileName"
     ```
 
 - Show a file within a file-workspace for a specified subscription (same as the account subscription)
     ```bash
-        support in-subscription file-workspace file show --file-workspace-name "TestWorkspaceName" --file-name "FileName"
+        support in-subscription file show --file-workspace-name "TestWorkspaceName" --file-name "FileName"
     ```
