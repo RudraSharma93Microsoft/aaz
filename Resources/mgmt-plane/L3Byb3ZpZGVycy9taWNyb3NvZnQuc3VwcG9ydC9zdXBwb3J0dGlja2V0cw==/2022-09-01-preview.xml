@@ -5,11 +5,11 @@
     <command name="list" version="2022-09-01-preview">
       <resource id="/providers/microsoft.support/supporttickets" version="2022-09-01-preview" swagger="mgmt-plane/support/ResourceProviders/Microsoft.Support/Paths/L3Byb3ZpZGVycy9NaWNyb3NvZnQuU3VwcG9ydC9zdXBwb3J0VGlja2V0cw==/V/MjAyMi0wOS0wMS1wcmV2aWV3"/>
       <argGroup name="">
-        <arg type="string" var="$Query.filter" options="filter">
-          <help short="The filter to apply on the operation. We support 'odata v4.0' filter semantics. <a target='_blank' href='https://docs.microsoft.com/odata/concepts/queryoptions-overview'>Learn more</a> <br/><i>Status</i> , <i>ServiceId</i>, and <i>ProblemClassificationId</i> filters can only be used with 'eq' operator. For <i>CreatedDate</i> filter, the supported operators are 'gt' and 'ge'. When using both filters, combine them using the logical 'AND'."/>
+        <arg type="string" var="$Query.filter" options="filter" group="">
+          <help short="The filter to apply on the operation. We support 'OData v4.0' filter semantics. Status, ServiceId, and ProblemClassificationId filters can only be used with Equals ('eq') operator. For CreatedDate filter, the supported operators are Greater Than ('gt') and Greater Than or Equals ('ge'). When using both filters, combine them using the logical 'and'."/>
         </arg>
-        <arg type="integer32" var="$Query.top" options="top">
-          <help short="The number of values to return in the collection. Default is 25 and max is 100."/>
+        <arg type="integer32" var="$Query.top" options="top" hide="True" group="">
+          <help short="The number of values to return in the collection. Default is 10 and max is 10."/>
         </arg>
       </argGroup>
       <operation operationId="SupportTicketsNoSubscription_List">

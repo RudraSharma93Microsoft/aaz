@@ -9,7 +9,7 @@
           <help short="Communication name."/>
         </arg>
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
-        <arg type="string" var="$Path.supportTicketName" options="support-ticket-name" required="True" idPart="name">
+        <arg type="string" var="$Path.supportTicketName" options="ticket-name" required="True" group="" idPart="name">
           <help short="Support ticket name."/>
         </arg>
       </argGroup>
@@ -74,16 +74,16 @@
           <help short="Communication name."/>
         </arg>
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
-        <arg type="string" var="$Path.supportTicketName" options="support-ticket-name" required="True" idPart="name">
+        <arg type="string" var="$Path.supportTicketName" options="ticket-name" required="True" group="" idPart="name">
           <help short="Support ticket name."/>
         </arg>
-        <arg type="string" var="$createCommunicationParameters.properties.body" options="body" group="">
+        <arg type="string" var="$createCommunicationParameters.properties.body" options="communication-body" group="">
           <help short="Body of the communication."/>
         </arg>
-        <arg type="string" var="$createCommunicationParameters.properties.sender" options="sender" group="">
+        <arg type="string" var="$createCommunicationParameters.properties.sender" options="communication-sender" group="">
           <help short="Email address of the sender. This property is required if called by a service principal."/>
         </arg>
-        <arg type="string" var="$createCommunicationParameters.properties.subject" options="subject" group="">
+        <arg type="string" var="$createCommunicationParameters.properties.subject" options="communication-subject" group="">
           <help short="Subject of the communication."/>
         </arg>
       </argGroup>
@@ -161,18 +161,16 @@
           <help short="Communication name."/>
         </arg>
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
-        <arg type="string" var="$Path.supportTicketName" options="support-ticket-name" required="True" idPart="name">
+        <arg type="string" var="$Path.supportTicketName" options="ticket-name" required="True" group="" idPart="name">
           <help short="Support ticket name."/>
         </arg>
-      </argGroup>
-      <argGroup name="Properties">
-        <arg type="string" var="$createCommunicationParameters.properties.body" options="body" group="Properties">
+        <arg type="string" var="$createCommunicationParameters.properties.body" options="communication-body" group="">
           <help short="Body of the communication."/>
         </arg>
-        <arg nullable="True" type="string" var="$createCommunicationParameters.properties.sender" options="sender" group="Properties">
+        <arg nullable="True" type="string" var="$createCommunicationParameters.properties.sender" options="communication-sender" group="">
           <help short="Email address of the sender. This property is required if called by a service principal."/>
         </arg>
-        <arg type="string" var="$createCommunicationParameters.properties.subject" options="subject" group="Properties">
+        <arg type="string" var="$createCommunicationParameters.properties.subject" options="communication-subject" group="">
           <help short="Subject of the communication."/>
         </arg>
       </argGroup>

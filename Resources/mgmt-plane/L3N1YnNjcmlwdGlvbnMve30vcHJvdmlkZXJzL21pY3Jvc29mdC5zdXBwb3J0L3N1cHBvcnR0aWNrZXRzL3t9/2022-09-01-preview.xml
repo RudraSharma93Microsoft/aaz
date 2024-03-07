@@ -129,260 +129,6 @@
       </operation>
       <output type="object" ref="$Instance" clientFlatten="True"/>
     </command>
-    <command name="update" version="2022-09-01-preview" confirmation="">
-      <resource id="/subscriptions/{}/providers/microsoft.support/supporttickets/{}" version="2022-09-01-preview" swagger="mgmt-plane/support/ResourceProviders/Microsoft.Support/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9wcm92aWRlcnMvTWljcm9zb2Z0LlN1cHBvcnQvc3VwcG9ydFRpY2tldHMve3N1cHBvcnRUaWNrZXROYW1lfQ==/V/MjAyMi0wOS0wMS1wcmV2aWV3"/>
-      <argGroup name="">
-        <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
-        <arg type="string" var="$Path.supportTicketName" options="ticket-name" required="True" group="" idPart="name">
-          <help short="Support ticket name."/>
-        </arg>
-        <arg type="string" var="$updateSupportTicket.advancedDiagnosticConsent" options="diagnostic-consent" group="">
-          <help short="Advanced diagnostic consent to be updated on the support ticket."/>
-          <enum>
-            <item name="No" value="&quot;No&quot;"/>
-            <item name="Yes" value="&quot;Yes&quot;"/>
-          </enum>
-        </arg>
-        <arg type="array<object>" var="$updateSupportTicket.secondaryConsent" options="secondary-consent" group="">
-          <help short="This property indicates secondary consents for the support ticket"/>
-          <item type="object">
-            <arg type="string" var="$updateSupportTicket.secondaryConsent[].type" options="type">
-              <help short="The service name for which the secondary consent is being provided. The value needs to be retrieved from the Problem Classification API response."/>
-            </arg>
-            <arg type="string" var="$updateSupportTicket.secondaryConsent[].userConsent" options="user-consent">
-              <help short="User consent value provided"/>
-              <enum>
-                <item name="No" value="&quot;No&quot;"/>
-                <item name="Yes" value="&quot;Yes&quot;"/>
-              </enum>
-            </arg>
-          </item>
-        </arg>
-        <arg type="string" var="$updateSupportTicket.severity" options="severity" group="">
-          <help short="Severity level."/>
-          <enum>
-            <item name="critical" value="&quot;critical&quot;"/>
-            <item name="highestcriticalimpact" value="&quot;highestcriticalimpact&quot;"/>
-            <item name="minimal" value="&quot;minimal&quot;"/>
-            <item name="moderate" value="&quot;moderate&quot;"/>
-          </enum>
-        </arg>
-        <arg type="string" var="$updateSupportTicket.status" options="status" group="">
-          <help short="Status to be updated on the ticket."/>
-          <enum>
-            <item name="closed" value="&quot;closed&quot;"/>
-            <item name="open" value="&quot;open&quot;"/>
-          </enum>
-        </arg>
-      </argGroup>
-      <argGroup name="Contact">
-        <arg type="array<string>" var="$updateSupportTicket.contactDetails.additionalEmailAddresses" options="contact-additional-emails" group="Contact">
-          <help short="Email addresses listed will be copied on any correspondence about the support ticket."/>
-          <item type="string"/>
-        </arg>
-        <arg type="string" var="$updateSupportTicket.contactDetails.country" options="contact-country" group="Contact">
-          <help short="Country of the user. This is the ISO 3166-1 alpha-3 code."/>
-        </arg>
-        <arg type="string" var="$updateSupportTicket.contactDetails.firstName" options="contact-first-name" group="Contact">
-          <help short="First name."/>
-        </arg>
-        <arg type="string" var="$updateSupportTicket.contactDetails.lastName" options="contact-last-name" group="Contact">
-          <help short="Last name."/>
-        </arg>
-        <arg type="string" var="$updateSupportTicket.contactDetails.phoneNumber" options="contact-phone-number" group="Contact">
-          <help short="Phone number. This is required if preferred contact method is phone."/>
-        </arg>
-        <arg type="string" var="$updateSupportTicket.contactDetails.preferredContactMethod" options="contact-method" group="Contact">
-          <help short="Preferred contact method."/>
-          <enum>
-            <item name="email" value="&quot;email&quot;"/>
-            <item name="phone" value="&quot;phone&quot;"/>
-          </enum>
-        </arg>
-        <arg type="string" var="$updateSupportTicket.contactDetails.preferredSupportLanguage" options="contact-language" group="Contact">
-          <help short="Preferred language of support from Azure. Support languages vary based on the severity you choose for your support ticket. Use the standard language-country code." lines="Preferred language of support from Azure. Support languages vary based on the severity you choose for your support ticket. Use the standard language-country code. Valid values are 'en-us' for English, 'zh-hans' for Chinese, 'es-es' for Spanish, 'fr-fr' for French, 'ja-jp' for Japanese, 'ko-kr' for Korean, 'ru-ru' for Russian, 'pt-br' for Portuguese, 'it-it' for Italian, 'zh-tw' for Chinese and 'de-de' for German."/>
-        </arg>
-        <arg type="string" var="$updateSupportTicket.contactDetails.preferredTimeZone" options="contact-timezone" group="Contact">
-          <help short="Time zone of the user. This is the name of the time zone from Microsoft Time Zone Index Values"/>
-        </arg>
-        <arg type="string" var="$updateSupportTicket.contactDetails.primaryEmailAddress" options="contact-email" group="Contact">
-          <help short="Primary email address."/>
-        </arg>
-      </argGroup>
-      <operation operationId="SupportTickets_Update">
-        <http path="/subscriptions/{subscriptionId}/providers/Microsoft.Support/supportTickets/{supportTicketName}">
-          <request method="patch">
-            <path>
-              <param type="string" name="subscriptionId" arg="$Path.subscriptionId" required="True"/>
-              <param type="string" name="supportTicketName" arg="$Path.supportTicketName" required="True"/>
-            </path>
-            <query>
-              <const readOnly="True" const="True" type="string" name="api-version" required="True">
-                <default value="&quot;2022-09-01-preview&quot;"/>
-              </const>
-            </query>
-            <body>
-              <json>
-                <schema type="object" name="updateSupportTicket" required="True" clientFlatten="True">
-                  <prop type="string" name="advancedDiagnosticConsent" arg="$updateSupportTicket.advancedDiagnosticConsent">
-                    <enum>
-                      <item value="&quot;No&quot;"/>
-                      <item value="&quot;Yes&quot;"/>
-                    </enum>
-                  </prop>
-                  <prop type="object" name="contactDetails">
-                    <prop type="array<string>" name="additionalEmailAddresses" arg="$updateSupportTicket.contactDetails.additionalEmailAddresses">
-                      <item type="string"/>
-                    </prop>
-                    <prop type="string" name="country" arg="$updateSupportTicket.contactDetails.country"/>
-                    <prop type="string" name="firstName" arg="$updateSupportTicket.contactDetails.firstName"/>
-                    <prop type="string" name="lastName" arg="$updateSupportTicket.contactDetails.lastName"/>
-                    <prop type="string" name="phoneNumber" arg="$updateSupportTicket.contactDetails.phoneNumber"/>
-                    <prop type="string" name="preferredContactMethod" arg="$updateSupportTicket.contactDetails.preferredContactMethod">
-                      <enum>
-                        <item value="&quot;email&quot;"/>
-                        <item value="&quot;phone&quot;"/>
-                      </enum>
-                    </prop>
-                    <prop type="string" name="preferredSupportLanguage" arg="$updateSupportTicket.contactDetails.preferredSupportLanguage"/>
-                    <prop type="string" name="preferredTimeZone" arg="$updateSupportTicket.contactDetails.preferredTimeZone"/>
-                    <prop type="string" name="primaryEmailAddress" arg="$updateSupportTicket.contactDetails.primaryEmailAddress"/>
-                  </prop>
-                  <prop type="array<object>" name="secondaryConsent" arg="$updateSupportTicket.secondaryConsent">
-                    <item type="object">
-                      <prop type="string" name="type" arg="$updateSupportTicket.secondaryConsent[].type"/>
-                      <prop type="string" name="userConsent" arg="$updateSupportTicket.secondaryConsent[].userConsent">
-                        <enum>
-                          <item value="&quot;No&quot;"/>
-                          <item value="&quot;Yes&quot;"/>
-                        </enum>
-                      </prop>
-                    </item>
-                  </prop>
-                  <prop type="string" name="severity" arg="$updateSupportTicket.severity">
-                    <enum>
-                      <item value="&quot;critical&quot;"/>
-                      <item value="&quot;highestcriticalimpact&quot;"/>
-                      <item value="&quot;minimal&quot;"/>
-                      <item value="&quot;moderate&quot;"/>
-                    </enum>
-                  </prop>
-                  <prop type="string" name="status" arg="$updateSupportTicket.status">
-                    <enum>
-                      <item value="&quot;closed&quot;"/>
-                      <item value="&quot;open&quot;"/>
-                    </enum>
-                  </prop>
-                </schema>
-              </json>
-            </body>
-          </request>
-          <response statusCode="200">
-            <body>
-              <json var="$Instance">
-                <schema type="object">
-                  <prop readOnly="True" type="ResourceId" name="id"/>
-                  <prop readOnly="True" type="string" name="name"/>
-                  <prop type="object" name="properties" clientFlatten="True">
-                    <prop type="string" name="advancedDiagnosticConsent">
-                      <enum>
-                        <item value="&quot;No&quot;"/>
-                        <item value="&quot;Yes&quot;"/>
-                      </enum>
-                    </prop>
-                    <prop type="object" name="contactDetails" required="True">
-                      <prop type="array<string>" name="additionalEmailAddresses">
-                        <item type="string"/>
-                      </prop>
-                      <prop type="string" name="country" required="True"/>
-                      <prop type="string" name="firstName" required="True"/>
-                      <prop type="string" name="lastName" required="True"/>
-                      <prop type="string" name="phoneNumber"/>
-                      <prop type="string" name="preferredContactMethod" required="True">
-                        <enum>
-                          <item value="&quot;email&quot;"/>
-                          <item value="&quot;phone&quot;"/>
-                        </enum>
-                      </prop>
-                      <prop type="string" name="preferredSupportLanguage" required="True"/>
-                      <prop type="string" name="preferredTimeZone" required="True"/>
-                      <prop type="string" name="primaryEmailAddress" required="True"/>
-                    </prop>
-                    <prop readOnly="True" type="dateTime" name="createdDate"/>
-                    <prop type="string" name="description" required="True"/>
-                    <prop readOnly="True" type="string" name="enrollmentId"/>
-                    <prop type="string" name="fileWorkspaceName"/>
-                    <prop readOnly="True" type="dateTime" name="modifiedDate"/>
-                    <prop readOnly="True" type="string" name="problemClassificationDisplayName"/>
-                    <prop type="string" name="problemClassificationId" required="True"/>
-                    <prop type="string" name="problemScopingQuestions"/>
-                    <prop type="dateTime" name="problemStartTime"/>
-                    <prop type="object" name="quotaTicketDetails">
-                      <prop type="string" name="quotaChangeRequestSubType"/>
-                      <prop type="string" name="quotaChangeRequestVersion"/>
-                      <prop type="array<object>" name="quotaChangeRequests" identifiers="region">
-                        <item type="object">
-                          <prop type="string" name="payload"/>
-                          <prop type="string" name="region"/>
-                        </item>
-                      </prop>
-                    </prop>
-                    <prop type="boolean" name="require24X7Response"/>
-                    <prop type="array<object>" name="secondaryConsent">
-                      <item type="object">
-                        <prop type="string" name="type"/>
-                        <prop type="string" name="userConsent">
-                          <enum>
-                            <item value="&quot;No&quot;"/>
-                            <item value="&quot;Yes&quot;"/>
-                          </enum>
-                        </prop>
-                      </item>
-                    </prop>
-                    <prop readOnly="True" type="string" name="serviceDisplayName"/>
-                    <prop type="string" name="serviceId" required="True"/>
-                    <prop type="object" name="serviceLevelAgreement">
-                      <prop readOnly="True" type="dateTime" name="expirationTime"/>
-                      <prop readOnly="True" type="integer32" name="slaMinutes"/>
-                      <prop readOnly="True" type="dateTime" name="startTime"/>
-                    </prop>
-                    <prop type="string" name="severity" required="True">
-                      <enum>
-                        <item value="&quot;critical&quot;"/>
-                        <item value="&quot;highestcriticalimpact&quot;"/>
-                        <item value="&quot;minimal&quot;"/>
-                        <item value="&quot;moderate&quot;"/>
-                      </enum>
-                    </prop>
-                    <prop readOnly="True" type="string" name="status"/>
-                    <prop type="object" name="supportEngineer">
-                      <prop readOnly="True" type="string" name="emailAddress"/>
-                    </prop>
-                    <prop readOnly="True" type="string" name="supportPlanDisplayName"/>
-                    <prop type="string" name="supportPlanId"/>
-                    <prop readOnly="True" type="string" name="supportPlanType"/>
-                    <prop type="string" name="supportTicketId"/>
-                    <prop type="object" name="technicalTicketDetails">
-                      <prop type="string" name="resourceId"/>
-                    </prop>
-                    <prop type="string" name="title" required="True"/>
-                  </prop>
-                  <prop readOnly="True" type="string" name="type"/>
-                </schema>
-              </json>
-            </body>
-          </response>
-          <response isError="True">
-            <body>
-              <json>
-                <schema type="@MgmtErrorFormat"/>
-              </json>
-            </body>
-          </response>
-        </http>
-      </operation>
-      <output type="object" ref="$Instance" clientFlatten="True"/>
-    </command>
     <command name="create" version="2022-09-01-preview" confirmation="">
       <resource id="/subscriptions/{}/providers/microsoft.support/supporttickets/{}" version="2022-09-01-preview" swagger="mgmt-plane/support/ResourceProviders/Microsoft.Support/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9wcm92aWRlcnMvTWljcm9zb2Z0LlN1cHBvcnQvc3VwcG9ydFRpY2tldHMve3N1cHBvcnRUaWNrZXROYW1lfQ==/V/MjAyMi0wOS0wMS1wcmV2aWV3"/>
       <argGroup name="">
@@ -390,7 +136,7 @@
         <arg type="string" var="$Path.supportTicketName" options="ticket-name" required="True" group="" idPart="name">
           <help short="Support ticket name."/>
         </arg>
-        <arg type="string" var="$createSupportTicketParameters.properties.advancedDiagnosticConsent" options="diagnostic-consent" group="">
+        <arg type="string" var="$createSupportTicketParameters.properties.advancedDiagnosticConsent" options="advanced-diagnostic-consent" group="">
           <help short="Advanced diagnostic consent to be updated on the support ticket."/>
           <enum>
             <item name="No" value="&quot;No&quot;"/>
@@ -696,6 +442,260 @@
             </body>
           </response>
           <response statusCode="202"/>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <output type="object" ref="$Instance" clientFlatten="True"/>
+    </command>
+    <command name="update" version="2022-09-01-preview" confirmation="">
+      <resource id="/subscriptions/{}/providers/microsoft.support/supporttickets/{}" version="2022-09-01-preview" swagger="mgmt-plane/support/ResourceProviders/Microsoft.Support/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9wcm92aWRlcnMvTWljcm9zb2Z0LlN1cHBvcnQvc3VwcG9ydFRpY2tldHMve3N1cHBvcnRUaWNrZXROYW1lfQ==/V/MjAyMi0wOS0wMS1wcmV2aWV3"/>
+      <argGroup name="">
+        <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
+        <arg type="string" var="$Path.supportTicketName" options="ticket-name" required="True" group="" idPart="name">
+          <help short="Support ticket name."/>
+        </arg>
+        <arg type="string" var="$updateSupportTicket.advancedDiagnosticConsent" options="advanced-diagnostic-consent" group="">
+          <help short="Advanced diagnostic consent to be updated on the support ticket."/>
+          <enum>
+            <item name="No" value="&quot;No&quot;"/>
+            <item name="Yes" value="&quot;Yes&quot;"/>
+          </enum>
+        </arg>
+        <arg type="array<object>" var="$updateSupportTicket.secondaryConsent" options="secondary-consent" group="">
+          <help short="This property indicates secondary consents for the support ticket"/>
+          <item type="object">
+            <arg type="string" var="$updateSupportTicket.secondaryConsent[].type" options="type">
+              <help short="The service name for which the secondary consent is being provided. The value needs to be retrieved from the Problem Classification API response."/>
+            </arg>
+            <arg type="string" var="$updateSupportTicket.secondaryConsent[].userConsent" options="user-consent">
+              <help short="User consent value provided"/>
+              <enum>
+                <item name="No" value="&quot;No&quot;"/>
+                <item name="Yes" value="&quot;Yes&quot;"/>
+              </enum>
+            </arg>
+          </item>
+        </arg>
+        <arg type="string" var="$updateSupportTicket.severity" options="severity" group="">
+          <help short="Severity level."/>
+          <enum>
+            <item name="critical" value="&quot;critical&quot;"/>
+            <item name="highestcriticalimpact" value="&quot;highestcriticalimpact&quot;"/>
+            <item name="minimal" value="&quot;minimal&quot;"/>
+            <item name="moderate" value="&quot;moderate&quot;"/>
+          </enum>
+        </arg>
+        <arg type="string" var="$updateSupportTicket.status" options="status" group="">
+          <help short="Status to be updated on the ticket."/>
+          <enum>
+            <item name="closed" value="&quot;closed&quot;"/>
+            <item name="open" value="&quot;open&quot;"/>
+          </enum>
+        </arg>
+      </argGroup>
+      <argGroup name="Contact">
+        <arg type="array<string>" var="$updateSupportTicket.contactDetails.additionalEmailAddresses" options="contact-additional-emails" group="Contact">
+          <help short="Email addresses listed will be copied on any correspondence about the support ticket."/>
+          <item type="string"/>
+        </arg>
+        <arg type="string" var="$updateSupportTicket.contactDetails.country" options="contact-country" group="Contact">
+          <help short="Country of the user. This is the ISO 3166-1 alpha-3 code."/>
+        </arg>
+        <arg type="string" var="$updateSupportTicket.contactDetails.firstName" options="contact-first-name" group="Contact">
+          <help short="First name."/>
+        </arg>
+        <arg type="string" var="$updateSupportTicket.contactDetails.lastName" options="contact-last-name" group="Contact">
+          <help short="Last name."/>
+        </arg>
+        <arg type="string" var="$updateSupportTicket.contactDetails.phoneNumber" options="contact-phone-number" group="Contact">
+          <help short="Phone number. This is required if preferred contact method is phone."/>
+        </arg>
+        <arg type="string" var="$updateSupportTicket.contactDetails.preferredContactMethod" options="contact-method" group="Contact">
+          <help short="Preferred contact method."/>
+          <enum>
+            <item name="email" value="&quot;email&quot;"/>
+            <item name="phone" value="&quot;phone&quot;"/>
+          </enum>
+        </arg>
+        <arg type="string" var="$updateSupportTicket.contactDetails.preferredSupportLanguage" options="contact-language" group="Contact">
+          <help short="Preferred language of support from Azure. Support languages vary based on the severity you choose for your support ticket. Use the standard language-country code." lines="Preferred language of support from Azure. Support languages vary based on the severity you choose for your support ticket. Use the standard language-country code. Valid values are 'en-us' for English, 'zh-hans' for Chinese, 'es-es' for Spanish, 'fr-fr' for French, 'ja-jp' for Japanese, 'ko-kr' for Korean, 'ru-ru' for Russian, 'pt-br' for Portuguese, 'it-it' for Italian, 'zh-tw' for Chinese and 'de-de' for German."/>
+        </arg>
+        <arg type="string" var="$updateSupportTicket.contactDetails.preferredTimeZone" options="contact-timezone" group="Contact">
+          <help short="Time zone of the user. This is the name of the time zone from Microsoft Time Zone Index Values"/>
+        </arg>
+        <arg type="string" var="$updateSupportTicket.contactDetails.primaryEmailAddress" options="contact-email" group="Contact">
+          <help short="Primary email address."/>
+        </arg>
+      </argGroup>
+      <operation operationId="SupportTickets_Update">
+        <http path="/subscriptions/{subscriptionId}/providers/Microsoft.Support/supportTickets/{supportTicketName}">
+          <request method="patch">
+            <path>
+              <param type="string" name="subscriptionId" arg="$Path.subscriptionId" required="True"/>
+              <param type="string" name="supportTicketName" arg="$Path.supportTicketName" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version" required="True">
+                <default value="&quot;2022-09-01-preview&quot;"/>
+              </const>
+            </query>
+            <body>
+              <json>
+                <schema type="object" name="updateSupportTicket" required="True" clientFlatten="True">
+                  <prop type="string" name="advancedDiagnosticConsent" arg="$updateSupportTicket.advancedDiagnosticConsent">
+                    <enum>
+                      <item value="&quot;No&quot;"/>
+                      <item value="&quot;Yes&quot;"/>
+                    </enum>
+                  </prop>
+                  <prop type="object" name="contactDetails">
+                    <prop type="array<string>" name="additionalEmailAddresses" arg="$updateSupportTicket.contactDetails.additionalEmailAddresses">
+                      <item type="string"/>
+                    </prop>
+                    <prop type="string" name="country" arg="$updateSupportTicket.contactDetails.country"/>
+                    <prop type="string" name="firstName" arg="$updateSupportTicket.contactDetails.firstName"/>
+                    <prop type="string" name="lastName" arg="$updateSupportTicket.contactDetails.lastName"/>
+                    <prop type="string" name="phoneNumber" arg="$updateSupportTicket.contactDetails.phoneNumber"/>
+                    <prop type="string" name="preferredContactMethod" arg="$updateSupportTicket.contactDetails.preferredContactMethod">
+                      <enum>
+                        <item value="&quot;email&quot;"/>
+                        <item value="&quot;phone&quot;"/>
+                      </enum>
+                    </prop>
+                    <prop type="string" name="preferredSupportLanguage" arg="$updateSupportTicket.contactDetails.preferredSupportLanguage"/>
+                    <prop type="string" name="preferredTimeZone" arg="$updateSupportTicket.contactDetails.preferredTimeZone"/>
+                    <prop type="string" name="primaryEmailAddress" arg="$updateSupportTicket.contactDetails.primaryEmailAddress"/>
+                  </prop>
+                  <prop type="array<object>" name="secondaryConsent" arg="$updateSupportTicket.secondaryConsent">
+                    <item type="object">
+                      <prop type="string" name="type" arg="$updateSupportTicket.secondaryConsent[].type"/>
+                      <prop type="string" name="userConsent" arg="$updateSupportTicket.secondaryConsent[].userConsent">
+                        <enum>
+                          <item value="&quot;No&quot;"/>
+                          <item value="&quot;Yes&quot;"/>
+                        </enum>
+                      </prop>
+                    </item>
+                  </prop>
+                  <prop type="string" name="severity" arg="$updateSupportTicket.severity">
+                    <enum>
+                      <item value="&quot;critical&quot;"/>
+                      <item value="&quot;highestcriticalimpact&quot;"/>
+                      <item value="&quot;minimal&quot;"/>
+                      <item value="&quot;moderate&quot;"/>
+                    </enum>
+                  </prop>
+                  <prop type="string" name="status" arg="$updateSupportTicket.status">
+                    <enum>
+                      <item value="&quot;closed&quot;"/>
+                      <item value="&quot;open&quot;"/>
+                    </enum>
+                  </prop>
+                </schema>
+              </json>
+            </body>
+          </request>
+          <response statusCode="200">
+            <body>
+              <json var="$Instance">
+                <schema type="object">
+                  <prop readOnly="True" type="ResourceId" name="id"/>
+                  <prop readOnly="True" type="string" name="name"/>
+                  <prop type="object" name="properties" clientFlatten="True">
+                    <prop type="string" name="advancedDiagnosticConsent">
+                      <enum>
+                        <item value="&quot;No&quot;"/>
+                        <item value="&quot;Yes&quot;"/>
+                      </enum>
+                    </prop>
+                    <prop type="object" name="contactDetails" required="True">
+                      <prop type="array<string>" name="additionalEmailAddresses">
+                        <item type="string"/>
+                      </prop>
+                      <prop type="string" name="country" required="True"/>
+                      <prop type="string" name="firstName" required="True"/>
+                      <prop type="string" name="lastName" required="True"/>
+                      <prop type="string" name="phoneNumber"/>
+                      <prop type="string" name="preferredContactMethod" required="True">
+                        <enum>
+                          <item value="&quot;email&quot;"/>
+                          <item value="&quot;phone&quot;"/>
+                        </enum>
+                      </prop>
+                      <prop type="string" name="preferredSupportLanguage" required="True"/>
+                      <prop type="string" name="preferredTimeZone" required="True"/>
+                      <prop type="string" name="primaryEmailAddress" required="True"/>
+                    </prop>
+                    <prop readOnly="True" type="dateTime" name="createdDate"/>
+                    <prop type="string" name="description" required="True"/>
+                    <prop readOnly="True" type="string" name="enrollmentId"/>
+                    <prop type="string" name="fileWorkspaceName"/>
+                    <prop readOnly="True" type="dateTime" name="modifiedDate"/>
+                    <prop readOnly="True" type="string" name="problemClassificationDisplayName"/>
+                    <prop type="string" name="problemClassificationId" required="True"/>
+                    <prop type="string" name="problemScopingQuestions"/>
+                    <prop type="dateTime" name="problemStartTime"/>
+                    <prop type="object" name="quotaTicketDetails">
+                      <prop type="string" name="quotaChangeRequestSubType"/>
+                      <prop type="string" name="quotaChangeRequestVersion"/>
+                      <prop type="array<object>" name="quotaChangeRequests" identifiers="region">
+                        <item type="object">
+                          <prop type="string" name="payload"/>
+                          <prop type="string" name="region"/>
+                        </item>
+                      </prop>
+                    </prop>
+                    <prop type="boolean" name="require24X7Response"/>
+                    <prop type="array<object>" name="secondaryConsent">
+                      <item type="object">
+                        <prop type="string" name="type"/>
+                        <prop type="string" name="userConsent">
+                          <enum>
+                            <item value="&quot;No&quot;"/>
+                            <item value="&quot;Yes&quot;"/>
+                          </enum>
+                        </prop>
+                      </item>
+                    </prop>
+                    <prop readOnly="True" type="string" name="serviceDisplayName"/>
+                    <prop type="string" name="serviceId" required="True"/>
+                    <prop type="object" name="serviceLevelAgreement">
+                      <prop readOnly="True" type="dateTime" name="expirationTime"/>
+                      <prop readOnly="True" type="integer32" name="slaMinutes"/>
+                      <prop readOnly="True" type="dateTime" name="startTime"/>
+                    </prop>
+                    <prop type="string" name="severity" required="True">
+                      <enum>
+                        <item value="&quot;critical&quot;"/>
+                        <item value="&quot;highestcriticalimpact&quot;"/>
+                        <item value="&quot;minimal&quot;"/>
+                        <item value="&quot;moderate&quot;"/>
+                      </enum>
+                    </prop>
+                    <prop readOnly="True" type="string" name="status"/>
+                    <prop type="object" name="supportEngineer">
+                      <prop readOnly="True" type="string" name="emailAddress"/>
+                    </prop>
+                    <prop readOnly="True" type="string" name="supportPlanDisplayName"/>
+                    <prop type="string" name="supportPlanId"/>
+                    <prop readOnly="True" type="string" name="supportPlanType"/>
+                    <prop type="string" name="supportTicketId"/>
+                    <prop type="object" name="technicalTicketDetails">
+                      <prop type="string" name="resourceId"/>
+                    </prop>
+                    <prop type="string" name="title" required="True"/>
+                  </prop>
+                  <prop readOnly="True" type="string" name="type"/>
+                </schema>
+              </json>
+            </body>
+          </response>
           <response isError="True">
             <body>
               <json>

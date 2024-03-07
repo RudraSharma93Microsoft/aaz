@@ -8,7 +8,7 @@
         <arg type="string" var="$Path.chatTranscriptName" options="chat-transcript-name" required="True">
           <help short="ChatTranscript name."/>
         </arg>
-        <arg type="string" var="$Path.supportTicketName" options="support-ticket-name" required="True">
+        <arg type="string" var="$Path.supportTicketName" options="ticket-name" required="True" group="">
           <help short="Support ticket name."/>
         </arg>
       </argGroup>

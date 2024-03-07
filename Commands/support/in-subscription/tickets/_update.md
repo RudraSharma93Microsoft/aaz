@@ -1,6 +1,6 @@
 # [Command] _support in-subscription tickets update_
 
-Updates severity level, status, advanced diagnostic consent, secondary consent, and customer contact information for a support ticket.
+Update API allows you to update the severity level, ticket status, advanced diagnostic consent, secondary consent, and your contact information in the support ticket.<br/><br/>Note: The severity levels cannot be changed if a support ticket is actively being worked upon by an Azure support engineer. In such a case, contact your support engineer to request severity update by adding a new communication using the Communications API.
 
 ## Versions
 
@@ -27,12 +27,12 @@ Updates severity level, status, advanced diagnostic consent, secondary consent, 
 
 - Update advanced diagnostic consent of a support ticket
     ```bash
-        support in-subscription tickets update --ticket-name "TestTicketName" --diagnostic-consent "Yes"
+        support in-subscription tickets update --ticket-name "TestTicketName" --advanced-diagnostic-consent "Yes"
     ```
 
 - Update secondary consent of a support ticket
     ```bash
         support in-subscription tickets update --ticket-name "TestTicketName" --secondary-consent "[{type:VirtualMachineMemoryDump,user-consent:No}]"
-        support in-subscription tickets update --ticket-name "TestTicketName" --secondary-consent [0].type="VirtualMachineMemoryDump" [0].user-consent="No"
+        support in-subscription tickets update --ticket-name "TestTicketName" --secondary-consent [0].type="VirtualMachineMemoryDump" --secondary-consent [0].user-consent="No"
         support in-subscription tickets update --ticket-name "TestTicketName" --secondary-consent [0]="{type:VirtualMachineMemoryDump,user-consent:No}"
     ```

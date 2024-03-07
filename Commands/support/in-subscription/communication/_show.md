@@ -12,5 +12,5 @@ Get communication details for a support ticket.
 
 - Get communication details for a subscription support ticket.
     ```bash
-        support in-subscription communication show --support-ticket-name "TestTicketName" --communication-name "TestTicketCommunicationName"
+        support in-subscription communication show --ticket-name "TestTicketName" --communication-name "TestTicketCommunicationName"
     ```

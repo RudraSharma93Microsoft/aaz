@@ -27,10 +27,15 @@ List all the support tickets for an Azure subscription.
 
 - List support tickets with a certain problem classification id for a subscription
     ```bash
-        support in-subscription tickets list --filter "ServiceId eq 'service_guid'"
+        support in-subscription tickets list --filter "ProblemClassificationId eq 'problem_classification_guid'"
     ```
 
 - List support tickets created on or after a certain date and in open state for a subscription
     ```bash
         support in-subscription tickets list --filter "CreatedDate ge 2024-01-01T22:08:51Z and Status eq 'Open'"
+    ```
+
+- List support tickets with a certain service id for a subscription
+    ```bash
+        support in-subscription tickets list --filter "ServiceId eq 'service_guid'"
     ```

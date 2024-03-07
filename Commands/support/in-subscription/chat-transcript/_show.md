@@ -12,5 +12,5 @@ Get chatTranscript details for a support ticket under a subscription.
 
 - Get chatTranscript details for a support ticket under a subscription.
     ```bash
-        support in-subscription chat-transcript show --support-ticket-name "TestTicketName" --chat-transcript-name "TestChatTranscriptName"
+        support in-subscription chat-transcript show --ticket-name "TestTicketName" --chat-transcript-name "TestChatTranscriptName"
     ```

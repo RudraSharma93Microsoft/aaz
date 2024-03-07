@@ -5,8 +5,8 @@
     <command name="list" version="2022-09-01-preview">
       <resource id="/providers/microsoft.support/supporttickets/{}/chattranscripts" version="2022-09-01-preview" swagger="mgmt-plane/support/ResourceProviders/Microsoft.Support/Paths/L3Byb3ZpZGVycy9NaWNyb3NvZnQuU3VwcG9ydC9zdXBwb3J0VGlja2V0cy97c3VwcG9ydFRpY2tldE5hbWV9L2NoYXRUcmFuc2NyaXB0cw==/V/MjAyMi0wOS0wMS1wcmV2aWV3"/>
       <argGroup name="">
-        <arg type="string" var="$Path.supportTicketName" options="support-ticket-name" required="True">
-          <help short="Support ticket name"/>
+        <arg type="string" var="$Path.supportTicketName" options="ticket-name" required="True" group="">
+          <help short="Support ticket name."/>
         </arg>
       </argGroup>
       <operation operationId="SupportTicketChatTranscriptsNoSubscription_List">

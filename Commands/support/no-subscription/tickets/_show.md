@@ -12,5 +12,5 @@ Get details for a specific support ticket. Support ticket data is available for 
 
 - Get details of a no subscription ticket
     ```bash
-        support no-subscription tickets show --support-ticket-name "TestTicketName"
+        support no-subscription tickets show --ticket-name "TestTicketName"
     ```

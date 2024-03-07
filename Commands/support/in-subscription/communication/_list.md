@@ -12,5 +12,5 @@ List all communications (attachments not included) for a support ticket. <br/></
 
 - List web communication created on or after a specific date for a subscription support ticket.
     ```bash
-        support in-subscription communication list --support-ticket-name "TestTicketName" --filter "CreatedDate ge 2024-01-01"
+        support in-subscription communication list --ticket-name "TestTicketName" --filter "CreatedDate ge 2024-01-01"
     ```

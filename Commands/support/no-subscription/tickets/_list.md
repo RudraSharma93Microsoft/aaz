@@ -34,3 +34,8 @@ List all the support tickets. <br/><br/>You can also filter the support tickets 
     ```bash
         support no-subscription tickets list --filter "CreatedDate ge 2024-01-01T22:08:51Z and Status eq 'Open'"
     ```
+
+- List support tickets with a certain service id for a no subscription
+    ```bash
+        support no-subscription tickets list --filter "ServiceId eq 'service_guid'"
+    ```

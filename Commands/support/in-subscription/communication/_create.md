@@ -12,5 +12,5 @@ Adds a new customer communication to an Azure support ticket.
 
 - Adds a new customer communication to an Azure support ticket.
     ```bash
-        support in-subscription communication create  --support-ticket-name "TestTicketName "--communication-name "TestTicketCommunicationName" --body "TicketCommunicationBody" --subject "TicketCommunicationSubject"
+        support in-subscription communication create  --ticket-name "TestTicketName "--communication-name "TestTicketCommunicationName" --communication-body "TicketCommunicationBody" --communication-subject "TicketCommunicationSubject"
     ```

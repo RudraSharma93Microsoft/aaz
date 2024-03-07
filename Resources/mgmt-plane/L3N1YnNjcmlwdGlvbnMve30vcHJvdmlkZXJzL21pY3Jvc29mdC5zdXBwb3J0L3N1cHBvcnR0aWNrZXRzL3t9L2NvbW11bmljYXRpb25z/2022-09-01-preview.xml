@@ -6,13 +6,13 @@
       <resource id="/subscriptions/{}/providers/microsoft.support/supporttickets/{}/communications" version="2022-09-01-preview" swagger="mgmt-plane/support/ResourceProviders/Microsoft.Support/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9wcm92aWRlcnMvTWljcm9zb2Z0LlN1cHBvcnQvc3VwcG9ydFRpY2tldHMve3N1cHBvcnRUaWNrZXROYW1lfS9jb21tdW5pY2F0aW9ucw==/V/MjAyMi0wOS0wMS1wcmV2aWV3"/>
       <argGroup name="">
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
-        <arg type="string" var="$Path.supportTicketName" options="support-ticket-name" required="True" idPart="name">
+        <arg type="string" var="$Path.supportTicketName" options="ticket-name" required="True" group="" idPart="name">
           <help short="Support ticket name."/>
         </arg>
         <arg type="string" var="$Query.filter" options="filter">
           <help short="The filter to apply on the operation. You can filter by communicationType and createdDate properties. CommunicationType supports Equals ('eq') operator and createdDate supports Greater Than ('gt') and Greater Than or Equals ('ge') operators. You may combine the CommunicationType and CreatedDate filters by Logical And ('and') operator."/>
         </arg>
-        <arg type="integer32" var="$Query.top" options="top">
+        <arg type="integer32" var="$Query.top" options="top" hide="True" group="">
           <help short="The number of values to return in the collection. Default is 10 and max is 10."/>
         </arg>
       </argGroup>

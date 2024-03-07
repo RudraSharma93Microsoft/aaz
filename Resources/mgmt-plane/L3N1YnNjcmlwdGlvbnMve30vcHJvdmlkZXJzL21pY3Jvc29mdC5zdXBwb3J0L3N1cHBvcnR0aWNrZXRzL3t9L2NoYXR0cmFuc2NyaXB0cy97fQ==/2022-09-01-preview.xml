@@ -9,7 +9,7 @@
           <help short="ChatTranscript name."/>
         </arg>
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
-        <arg type="string" var="$Path.supportTicketName" options="support-ticket-name" required="True" idPart="name">
+        <arg type="string" var="$Path.supportTicketName" options="ticket-name" required="True" group="" idPart="name">
           <help short="Support ticket name."/>
         </arg>
       </argGroup>

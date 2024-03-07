@@ -17,4 +17,4 @@ Create and manage Azure support ticket with a subscription.
 : Get ticket details for an Azure subscription. Support ticket data is available for 18 months after ticket creation. If a ticket was created more than 18 months ago, a request for data might cause an error.
 
 - [update](/Commands/support/in-subscription/tickets/_update.md)
-: Updates severity level, status, advanced diagnostic consent, secondary consent, and customer contact information for a support ticket.
+: Update API allows you to update the severity level, ticket status, advanced diagnostic consent, secondary consent, and your contact information in the support ticket.<br/><br/>Note: The severity levels cannot be changed if a support ticket is actively being worked upon by an Azure support engineer. In such a case, contact your support engineer to request severity update by adding a new communication using the Communications API.

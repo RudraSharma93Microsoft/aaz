@@ -7,10 +7,10 @@
       <argGroup name="">
         <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
         <arg type="string" var="$Query.filter" options="filter" group="">
-          <help short="The filter to apply on the operation. We support 'OData v4.0' filter semantics. Status, ServiceId, and ProblemClassificationId filters can only be used with Equals ('eq') operator. For CreatedDate filter, the supported operators are Greater Than ('gt') and Greater Than or Equals ('ge'). When using both filters, combine them using the logical 'and'. Default is CreatedDate >= one week"/>
+          <help short="The filter to apply on the operation. We support 'OData v4.0' filter semantics. Status, ServiceId, and ProblemClassificationId filters can only be used with Equals ('eq') operator. For CreatedDate filter, the supported operators are Greater Than ('gt') and Greater Than or Equals ('ge'). When using both filters, combine them using the logical 'and'."/>
         </arg>
         <arg type="integer32" var="$Query.top" options="top" hide="True" group="">
-          <help short="The number of values to return in the collection. Default is 25 and max is 100."/>
+          <help short="The number of values to return in the collection. Default is 10 and max is 10."/>
         </arg>
       </argGroup>
       <operation operationId="SupportTickets_List">

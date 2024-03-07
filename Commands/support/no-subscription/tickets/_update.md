@@ -12,27 +12,27 @@ Update API allows you to update the severity level, ticket status, advanced diag
 
 - Update support ticket severity.
     ```bash
-        support no-subscription tickets update --support-ticket-name "TestTicketName" --severity "moderate"
+        support no-subscription tickets update --ticket-name "TestTicketName" --severity "moderate"
     ```
 
 - Update support ticket status.
     ```bash
-        support no-subscription tickets update --support-ticket-name "TestTicketName" --status "closed"
+        support no-subscription tickets update --ticket-name "TestTicketName" --status "closed"
     ```
 
 - Update support ticket customer contact details properties
     ```bash
-        support no-subscription tickets update --support-ticket-name "TestTicketName" --contact-additional-emails "xyz@contoso.com" "devs@contoso.com" --contact-country "USA" --contact-email "abc@contoso.com" --contact-first-name "Foo" --contact-language "en-US" --contact-last-name "Bar" --contact-method "phone" --contact-phone-number "123-456-7890" --contact-timezone "Pacific Standard Time"
+        support no-subscription tickets update --ticket-name "TestTicketName" --contact-additional-emails "xyz@contoso.com" "devs@contoso.com" --contact-country "USA" --contact-email "abc@contoso.com" --contact-first-name "Foo" --contact-language "en-US" --contact-last-name "Bar" --contact-method "phone" --contact-phone-number "123-456-7890" --contact-timezone "Pacific Standard Time"
     ```
 
 - Update advanced diagnostic consent of a support ticket
     ```bash
-        support no-subscription tickets update --support-ticket-name "TestTicketName" --diagnostic-consent "Yes"
+        support no-subscription tickets update --ticket-name "TestTicketName" --advanced-diagnostic-consent "Yes"
     ```
 
 - Update secondary consent of a support ticket
     ```bash
-        support no-subscription tickets update --support-ticket-name "TestTicketName" --secondary-consent "[{type:VirtualMachineMemoryDump,user-consent:No}]"
-        support no-subscription tickets update --support-ticket-name "TestTicketName" --secondary-consent [0].type="VirtualMachineMemoryDump" [0].user-consent="No"
-        support no-subscription tickets update --support-ticket-name "TestTicketName" --secondary-consent [0]="{type:VirtualMachineMemoryDump,user-consent:No}"
+        support no-subscription tickets update --ticket-name "TestTicketName" --secondary-consent "[{type:VirtualMachineMemoryDump,user-consent:No}]"
+        support no-subscription tickets update --ticket-name "TestTicketName" --secondary-consent [0].type="VirtualMachineMemoryDump" --secondary-consent [0].user-consent="No"
+        support no-subscription tickets update --ticket-name "TestTicketName" --secondary-consent [0]="{type:VirtualMachineMemoryDump,user-consent:No}"
     ```

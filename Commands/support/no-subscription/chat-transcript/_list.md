@@ -12,5 +12,5 @@ List all chat transcripts for a support ticket
 
 - List all chat transcripts for a support ticket
     ```bash
-        support no-subscription chat-transcript list --support-ticket-name "TestTicketName"
+        support no-subscription chat-transcript list --ticket-name "TestTicketName"
     ```
