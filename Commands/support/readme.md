@@ -9,3 +9,6 @@ Manage Azure support resource.
 
 - [no-subscription](/Commands/support/no-subscription/readme.md)
 : Manage Azure support resource without a subscription.
+
+- [services](/Commands/support/services/readme.md)
+: Azure services and related problem categories.
