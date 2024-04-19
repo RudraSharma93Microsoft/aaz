@@ -14,3 +14,14 @@ List all communications (attachments not included) for a support ticket. <br/></
     ```bash
         support in-subscription communication list --ticket-name "TestTicketName" --filter "CreatedDate ge 2024-01-01"
     ```
+
+### [2024-04-01](/Resources/mgmt-plane/L3N1YnNjcmlwdGlvbnMve30vcHJvdmlkZXJzL21pY3Jvc29mdC5zdXBwb3J0L3N1cHBvcnR0aWNrZXRzL3t9L2NvbW11bmljYXRpb25z/2024-04-01.xml) **Stable**
+
+<!-- mgmt-plane /subscriptions/{}/providers/microsoft.support/supporttickets/{}/communications 2024-04-01 -->
+
+#### examples
+
+- List web communication created on or after a specific date for a subscription support ticket.
+    ```bash
+        support in-subscription communication list --ticket-name "TestTicketName" --filter "CreatedDate ge 2024-01-01"
+    ```
