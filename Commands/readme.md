@@ -15,7 +15,10 @@
 : Manage lustre file system
 
 - [apic](/Commands/apic/readme.md)
-: API Center
+: Manage Azure API Center services
+
+- [astronomer](/Commands/astronomer/readme.md)
+: Manage Azure Astronomer resources.
 
 - [attestation](/Commands/attestation/readme.md)
 : Manage Microsoft Azure Attestation (MAA).
@@ -24,7 +27,7 @@
 : Manage Automanage
 
 - [automation](/Commands/automation/readme.md)
-: Manage Automation Account
+: Manage Automation Account.
 
 - [billing](/Commands/billing/readme.md)
 : Manage Azure Billing.
@@ -41,11 +44,29 @@
 - [capacity](/Commands/capacity/readme.md)
 : Manage capacity.
 
+- [cdn](/Commands/cdn/readme.md)
+: Manage Azure Content Delivery Networks (CDNs).
+
 - [change-analysis](/Commands/change-analysis/readme.md)
 : List changes for resources
 
+- [cloud-service](/Commands/cloud-service/readme.md)
+: Manage cloud service
+
+- [communication](/Commands/communication/readme.md)
+: Manage communication service with communication.
+
+- [compute](/Commands/compute/readme.md)
+: Mange azure compute vm config
+
+- [compute-diagnostic](/Commands/compute-diagnostic/readme.md)
+: Mange vm sku recommender info
+
 - [confidentialledger](/Commands/confidentialledger/readme.md)
 : Deploy and manage Azure confidential ledgers.
+
+- [confluent](/Commands/confluent/readme.md)
+: Manage confluent organization
 
 - [connectedmachine](/Commands/connectedmachine/readme.md)
 : Manage an Azure Arc-Enabled Server.
@@ -56,14 +77,23 @@
 - [cosmosdb](/Commands/cosmosdb/readme.md)
 : Manage Azure Cosmos DB database accounts.
 
+- [costmanagement](/Commands/costmanagement/readme.md)
+: costmanagement
+
 - [databox](/Commands/databox/readme.md)
 : Manage data box
+
+- [databoxedge](/Commands/databoxedge/readme.md)
+: Manage device with databoxedge.
 
 - [databricks](/Commands/databricks/readme.md)
 : Manage databricks workspaces.
 
 - [dataprotection](/Commands/dataprotection/readme.md)
 : Manage dataprotection.
+
+- [desktopvirtualization](/Commands/desktopvirtualization/readme.md)
+: Manage desktop virtualization.
 
 - [devcenter](/Commands/devcenter/readme.md)
 : Manage resources with devcenter.
@@ -98,6 +128,9 @@
 - [eventhubs](/Commands/eventhubs/readme.md)
 : eventhub
 
+- [firmwareanalysis](/Commands/firmwareanalysis/readme.md)
+: Commands to manage firmware analysis.
+
 - [fluid-relay](/Commands/fluid-relay/readme.md)
 : Manage Fluid Relay
 
@@ -116,6 +149,9 @@
 - [maintenance](/Commands/maintenance/readme.md)
 : Manage Maintenance
 
+- [mdp](/Commands/mdp/readme.md)
+: Manage resources of Managed DevOps pools
+
 - [mesh](/Commands/mesh/readme.md)
 : (PREVIEW) Manage Azure Service Fabric Mesh Resources.
 
@@ -123,7 +159,7 @@
 : Manage mobile network
 
 - [monitor](/Commands/monitor/readme.md)
-: Monitor.
+: Manage the Azure Monitor Service.
 
 - [netappfiles](/Commands/netappfiles/readme.md)
 : Manage Azure NetApp Files (ANF) Resources
@@ -188,6 +224,9 @@
 - [restore-point](/Commands/restore-point/readme.md)
 : Manage restore point with res.
 
+- [security](/Commands/security/readme.md)
+: Manage your security posture with Microsoft Defender for Cloud.
+
 - [self-help](/Commands/self-help/readme.md)
 : Azure SelfHelp will help you troubleshoot issues with Azure resources.
 
@@ -224,8 +263,8 @@
 - [storage-mover](/Commands/storage-mover/readme.md)
 : Manage top-level Storage Mover resource.
 
-- [support](/Commands/support/readme.md)
-: Manage Azure support resource.
+- [storagesync](/Commands/storagesync/readme.md)
+: Manage Azure File Sync.
 
 - [tsi](/Commands/tsi/readme.md)
 : Manage Azure Time Series Insights.
